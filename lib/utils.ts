@@ -6,3 +6,8 @@ export function encodePayload(payload: string) {
     .replace(/\*/g, '%2a')
     .replace(/\'/g, '%27')
 }
+
+export function encodePayloadStored(payload: string) {
+  return payload
+    .replace(/\`/g, '\\`')
+}

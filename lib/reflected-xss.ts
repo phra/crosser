@@ -29,7 +29,7 @@ export async function reflectedXssScan(url: string, payloads: string[]) {
     })
 
     // tslint:disable-next-line:no-console
-    console.log('Vulnerable:', output === 1)
+    console.log('Vulnerable:', output === 1, p)
     await page.close()
   }
 

@@ -34,7 +34,7 @@
     "version": "oclif-dev readme && git add README.md"
   },
   "bin": {
-    "crosser": "./bin/run.js"
+    "crosser": "./bin/run"
   },
   "files": [
     "./bin",

@@ -3,6 +3,14 @@ import {Command, flags} from '@oclif/command'
 import { PAYLOADS } from '../lib/payloads'
 import { storedXssScan } from '../lib/stored-xss'
 
+export interface IStoredXssFlags {
+  help: void
+  url1: string
+  url2: string
+  pre: string
+  post: string
+}
+
 function die(msg: string) {
   // tslint:disable-next-line:no-console
   console.error(msg)
@@ -21,10 +29,10 @@ export default class Stored extends Command {
 
   public static flags = {
     help: flags.help({char: 'h'}),
-    url1: flags.string({char: 'u', description: 'url to connect'}),
-    url2: flags.string({char: 'x', description: 'url to connect'}),
-    pre: flags.string({char: 'b', description: 'url to connect'}),
-    post: flags.string({char: 'a', description: 'url to connect'}),
+    url1: flags.string({char: 'u', description: 'url to connect', required: true}),
+    url2: flags.string({char: 'x', description: 'url to connect', required: true}),
+    pre: flags.string({char: 'b', description: 'url to connect', required: true}),
+    post: flags.string({char: 'a', description: 'url to connect', required: true}),
   }
 
   public static args = []
@@ -32,10 +40,10 @@ export default class Stored extends Command {
   public async run() {
     const {args, flags: parsedFlags} = this.parse(Stored)
 
-    const url1 = parsedFlags.url1 || die('missing url')
-    const url2 = parsedFlags.url2 || die('missing url')
-    const pre = parsedFlags.pre || ''
-    const post = parsedFlags.post || ''
-    await storedXssScan(url1, url2, pre, post, PAYLOADS)
+    parsedFlags.url1 = parsedFlags.url1 || die('missing url')
+    parsedFlags.url2 = parsedFlags.url2 || die('missing url')
+    parsedFlags.pre = parsedFlags.pre || ''
+    parsedFlags.post = parsedFlags.post || ''
+    await storedXssScan(parsedFlags, PAYLOADS)
   }
 }

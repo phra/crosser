@@ -11,3 +11,10 @@ export function encodePayloadStored(payload: string) {
   return payload
     .replace(/\`/g, '\\`')
 }
+
+export function die(msg: string) {
+  // tslint:disable-next-line:no-console
+  console.error(msg)
+  process.exit(1)
+  return void 0 as any
+}

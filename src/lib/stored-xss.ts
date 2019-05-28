@@ -1,9 +1,12 @@
 import puppeteer = require('puppeteer')
-import { encodePayload, encodePayloadStored } from './utils'
+import { IStoredXssFlags } from '../commands/stored'
+import { encodePayloadStored } from './utils'
 
-export async function storedXssScan(url: string, url2: string, pre: string, post: string, payloads: string[]) {
+export async function storedXssScan(opts: IStoredXssFlags, payloads: string[]) {
+  const { url1, url2, pre, post } = opts
   const browser = await puppeteer.launch({
     headless: true,
+    ignoreHTTPSErrors: true,
     args: [
       `--no-sandbox`,
       `--disable-xss-auditor`,
@@ -20,8 +23,8 @@ export async function storedXssScan(url: string, url2: string, pre: string, post
     })
 
     // tslint:disable-next-line:no-console
-    console.log('testing: ' + url)
-    await page.goto(url, {timeout: 10000, waitUntil: 'networkidle0'})
+    console.log('testing: ' + url1)
+    await page.goto(url1, {timeout: 10000, waitUntil: 'networkidle0'})
 
     // tslint:disable-next-line:no-console
     console.log('evaluating: ' + pre.replace(/\<PAYLOAD\>/, encodePayloadStored(p)))

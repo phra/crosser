@@ -1,6 +1,6 @@
-import { PAYLOADS } from './lib/payloads'
-import { reflectedXssScan } from './lib/reflected-xss'
-import { storedXssScan } from './lib/stored-xss'
+import { PAYLOADS } from '../src/lib/payloads'
+import { reflectedXssScan } from '../src/lib/reflected-xss'
+import { storedXssScan } from '../src/lib/stored-xss'
 
 (async () => {
   // reflected

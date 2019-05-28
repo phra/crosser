@@ -29,11 +29,11 @@ export async function storedXssScan(url: string, url2: string, pre: string, post
     await page.evaluate(pre.replace(/\<PAYLOAD\>/, encodePayloadStored(p)))
 
     // tslint:disable-next-line:no-console
-    console.log('navigating to: ' + url)
+    console.log('navigating to: ' + url2)
     await page.goto(url2, {timeout: 10000, waitUntil: 'networkidle0'})
 
     // tslint:disable-next-line:no-console
-    console.log('evaluating: ' + post.replace(/\<PAYLOAD\>/, encodePayloadStored(p)))
+    console.log('evaluating: ' + post)
     await page.evaluate(post)
 
     await page.waitFor(1000)

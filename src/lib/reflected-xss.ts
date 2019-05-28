@@ -19,7 +19,7 @@ export async function reflectedXssScan(url: string, payloads: string[]) {
       window.alert = (arg) => (window as any).__crosser__ = arg
     })
 
-    const fullUrl = url + encodePayload(p)
+    const fullUrl = url.indexOf('PAYLOAD') >= 0 ? url.replace(/PAYLOAD/, encodePayload(p)) : url + encodePayload(p)
     // tslint:disable-next-line:no-console
     console.log('testing: ' + fullUrl)
     await page.goto(fullUrl, {timeout: 10000, waitUntil: 'networkidle0'})

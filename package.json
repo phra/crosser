@@ -37,10 +37,10 @@
     "crosser": "./bin/run"
   },
   "files": [
-    "./bin",
-    "./dist",
-    "./npm-shrinkwrap.json",
-    "./oclif.manifest.json"
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
   ],
   "oclif": {
     "commands": "./dist/commands",

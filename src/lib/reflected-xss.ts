@@ -1,9 +1,12 @@
 import puppeteer = require('puppeteer')
+import { IReflectedFlags } from '../commands/reflected'
 import { encodePayload } from './utils'
 
-export async function reflectedXssScan(url: string, payloads: string[]) {
+export async function reflectedXssScan(opts: IReflectedFlags, payloads: string[]) {
+  const { url } = opts
   const browser = await puppeteer.launch({
     headless: true,
+    ignoreHTTPSErrors: true,
     args: [
       `--no-sandbox`,
       `--disable-xss-auditor`,

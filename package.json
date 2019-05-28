@@ -1,7 +1,7 @@
 {
   "name": "@phra/crosser",
   "version": "0.0.1",
-  "description": "",
+  "description": "A Reflected / Stored / DOM XSS Scanner based on Headless Chrome Node API via Puppeteer",
   "main": "dist/crosser.js",
   "types": "dist/crosser.d.ts",
   "repository": "https://github.com/phra/crosser",

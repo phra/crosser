@@ -1,7 +1,7 @@
 # crosser
 A Reflected / Stored / DOM XSS Scanner based on Headless Chrome Node API via Puppeteer
 
-[![asciicast](https://asciinema.org/a/7lUzAnPezMkk7lpoJ2Wyo94yi.svg)](https://asciinema.org/a/7lUzAnPezMkk7lpoJ2Wyo94yi)
+[![asciicast](https://asciinema.org/a/QqM8LcqVyNeXF2oVMlVdPkftN.svg)](https://asciinema.org/a/QqM8LcqVyNeXF2oVMlVdPkftN)
 
 ## Installation
 

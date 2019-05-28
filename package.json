@@ -1,6 +1,6 @@
 {
   "name": "@phra/crosser",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A Reflected / Stored / DOM XSS Scanner based on Headless Chrome Node API via Puppeteer",
   "main": "dist/crosser.js",
   "types": "dist/crosser.d.ts",
@@ -25,11 +25,11 @@
     "tslib": "^1"
   },
   "scripts": {
-    "build": "rimraf dist && tsc -p . && cp package.json dist",
+    "build": "rimraf dist && tsc -p .",
     "prepublishOnly": "yarn run build",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
-    "prepack": "rm -rf dist && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf dist && tsc -p . && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },

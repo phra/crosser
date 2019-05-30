@@ -9,6 +9,7 @@ export function encodePayload(payload: string) {
 
 export function encodePayloadStored(payload: string) {
   return payload
+    .replace(/\\/g, '\\\\')
     .replace(/\`/g, '\\`')
 }
 

